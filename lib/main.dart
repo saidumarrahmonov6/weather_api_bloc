@@ -33,7 +33,14 @@ class MyApp extends StatefulWidget {
             return SizedBox();
           } else if(state is WeatherLoading){
             return Center(
-              child: CircularProgressIndicator(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Weather Api"),
+                  CircularProgressIndicator(),
+                ],
+              ),
             );
           } else if(state is WeatherSuccess) {
             return Column(
